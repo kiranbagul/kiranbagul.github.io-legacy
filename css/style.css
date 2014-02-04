@@ -1,4 +1,4 @@
-.headerText{
+.headerText {
     margin-top: 3px;
     font-family: Montserrat, sans-serif;
     color: #5c5c5c;
@@ -7,7 +7,6 @@
     letter-spacing: 9px;
     text-transform: uppercase;
 }
-
 .navLink {
     display: inline-block;
     margin-right: 8px;
@@ -19,33 +18,29 @@
     color: #5c5c5c;
     font-size: 14px;
     text-transform: uppercase;
-    cursor:pointer;
+    cursor: pointer;
 }
-
 .navLink:hover {
     color: #ed7a56;
 }
-
-.headerLinkDiv{
+.headerLinkDiv {
     padding-top: 6px;
     padding-top: 6px;
     width: 33%;
     float: left;
 }
-
 .header-cont {
-    width:100%;
-    position:fixed;
-    top:0px;
+    width: 100%;
+    position: fixed;
+    top: 0px;
 }
 .header {
-    height:70px;
-    background:#F0F0F0;
-    border:1px solid #CCC;
-    margin:0px auto;
+    height: 70px;
+    background: #F0F0F0;
+    border: 1px solid #CCC;
+    margin: 0px auto;
     z-index: 5;
 }
-
 .nav-link {
     display: inline-block;
     margin-right: 8px;
@@ -57,72 +52,71 @@
     color: #5c5c5c;
     font-size: 14px;
     text-transform: uppercase;
-    cursor:pointer;
+    cursor: pointer;
 }
-
 .nav-link:hover {
     color: #ed7a56;
 }
-
-#home { 
-	background: url(../images/education.jpg) 50% 0 no-repeat fixed; 
-	height: 1000px;  
-	margin: 70px 0 0 0;
-    width: 100%; 
-    max-width: 1920px; 
-    position: relative; 
-    box-shadow: 0 0 50px rgba(0,0,0,0.8);
+#home {
+    background: url(../images/education.jpg) 50% 0 no-repeat fixed;
+    height: 1000px;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1920px;
+    position: relative;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
 }
-
-#summary { 
-	background: url(../images/blue2.jpg) 50% 0 no-repeat fixed; 
-	height: 1000px;
-    width: 100%; 
-    max-width: 1920px; 
-    position: relative; 
-    box-shadow: 0 0 50px rgba(0,0,0,0.8);
-    margin:0px;
+#summary {
+    background: url(../images/blue2.jpg) 50% 0 no-repeat fixed;
+    height: 1000px;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1920px;
+    position: relative;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
 }
-
-#skills { 
-	height: 1000px;
-    width: 100%; 
-    max-width: 1920px; 
-    position: relative; 
-    box-shadow: 0 0 50px rgba(0,0,0,0.8);
+#home article {
+    background: url("../images/main3.jpg") no-repeat scroll center top transparent;
+    height: 500px;
+    text-indent: -9999px;
+    top: 291px;
+    width: 50%;
+    background-size: contain;
 }
-
-#edu { 
-	background: url(../images/education.jpg) 50% 0 no-repeat fixed; 
-	height: 1000px;
-    width: 100%; 
-    max-width: 1920px; 
-    position: relative; 
-    box-shadow: 0 0 50px rgba(0,0,0,0.8);
+#skills {
+    height: 1000px;
+    width: 100%;
+    max-width: 1920px;
+    position: relative;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
 }
-
-#experience { 
-	background: url(../images/blue2.jpg) 50% 0 no-repeat fixed; 
-	height: 1000px;
-	margin: 0 auto; 
-    width: 100%; 
-    max-width: 1920px; 
-    position: relative; 
-    box-shadow: 0 0 50px rgba(0,0,0,0.8);
+#edu {
+    background: url(../images/education.jpg) 50% 0 no-repeat fixed;
+    height: 1000px;
+    width: 100%;
+    max-width: 1920px;
+    position: relative;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
 }
-
-#hobbies{
-	background: url(../images/hobbies.jpg) 50% 0 no-repeat fixed; 
-	height: 400px;
-    width: 100%; 
-    max-width: 1920px; 
-    position: relative; 
-    box-shadow: 0 0 50px rgba(0,0,0,0.8);
+#experience {
+    background: url(../images/blue2.jpg) 50% 0 no-repeat fixed;
+    height: 1000px;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1920px;
+    position: relative;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
 }
-    
-
+#hobbies {
+    background: url(../images/hobbies.jpg) 50% 0 no-repeat fixed;
+    height: 400px;
+    width: 100%;
+    max-width: 1920px;
+    position: relative;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+}
 .summaryItem {
-    width:75%;
+    width: 75%;
     display: block;
     position: relative;
     padding: 16px 0 16px 60px;
@@ -148,7 +142,7 @@
     color: #202020;
 }
 .box:hover {
-    z-index:5;
+    z-index: 5;
     box-shadow: 0 0px 10px #000;
     border-right: 1px solid #FFF;
     border-bottom: 1px solid #FFF;
@@ -165,7 +159,6 @@
     width: 100px;
     height: 100px;
 }
-
 .stylenox {
     float: left;
     width: 100px;
@@ -177,35 +170,30 @@
     -ms-transition: all 0.8s;
 }
 .node {
-  opacity: 0.5;
+    opacity: 0.5;
 }
-
 .node:hover {
-  opacity: 1;
+    opacity: 1;
 }
-
 .link {
-  stroke: #999;
-  stroke-opacity: 0.3;
+    stroke: #999;
+    stroke-opacity: 0.3;
 }
 .headerNavLinkDiv {
     padding-top: 20px;
     float: right;
 }
-
-.interest{
+.interest {
     -webkit-transition: all 0.4s;
     -webkit-box-shadow: 0 18px 25px -6px black;
     -moz-box-shadow: 0 18px 25px -6px black;
     box-shadow: 0 18px 25px -6px black;
 }
-
-.interest:hover{
-    z-index:10;
+.interest:hover {
+    z-index: 10;
     -webkit-transform: rotate(0deg) scale(1.1);
     -webkit-transition: all 0.4s;
 }
-
 .painting {
     background-image: url(../images/painting.jpeg);
     width: 265px;
@@ -215,7 +203,6 @@
     -o-transform: rotate(-9deg);
     -ms-transform: rotate(-9deg);
 }
-
 .poetry {
     background-image: url(../images/poetry.jpeg);
     width: 225px;
@@ -225,7 +212,6 @@
     -o-transform: rotate(9deg);
     -ms-transform: rotate(9deg);
 }
-
 .travelling {
     background-image: url('../images/bagpack.jpeg');
     width: 255px;
@@ -235,7 +221,6 @@
     -o-transform: rotate(9deg);
     -ms-transform: rotate(9deg);
 }
-
 .reading {
     background-image: url('../images/reading.jpeg');
     width: 255px;
@@ -245,4 +230,3 @@
     -o-transform: rotate(-9deg);
     -ms-transform: rotate(-9deg);
 }
-

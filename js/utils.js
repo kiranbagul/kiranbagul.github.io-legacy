@@ -6,22 +6,16 @@
            $(window).scroll(function () {
                // Scroll the background at var speed
                // the yPos is a negative value because we're scrolling it UP!
-               var yPos = ($window.scrollTop() / $bgobj.data('speed'));
+               var yPos = -($window.scrollTop() / $bgobj.data('speed'));
                // Put together our final background position
                var coords = '50% ' + (yPos) + 'px';
                // Move the background
                $bgobj.css({
                    backgroundPosition: coords
                });
-               
-            var window_top = $(window).scrollTop() + 70; 
-            var div_top = $('#nav-anchor').offset().top;
-            if (window_top > div_top) {
-                $('nav').addClass('stick');
-            } else {
-                $('nav').removeClass('stick');
-            }
-               
+
+
+
            }); // window scroll Ends
        });
    });
