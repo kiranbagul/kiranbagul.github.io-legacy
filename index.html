@@ -1,74 +1,126 @@
 <!DOCTYPE html>
 <html>
 
-  <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Kiranbagul.github.io : for kiranbagul.in" />
+<head>
+    <meta charset="utf-8">
+    <title>Kiran Bagul</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <script src="js/jquery-1.10.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/d3.v3.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization',
+       'version':'1','packages':['timeline']}]}"></script>
+</head>
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>Kiranbagul.github.io</title>
-  </head>
-
-  <body>
-
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/kiranbagul">View on GitHub</a>
-
-          <h1 id="project_title">Kiranbagul.github.io</h1>
-          <h2 id="project_tagline">for kiranbagul.in</h2>
-
-        </header>
+<body>
+    <div class="header header-cont">
+        <div class="container">
+            <div class="headerLinkDiv">
+                <div class="headerText">Kiran R Bagul</div>
+                <a class="navLink" href="#">contact@kiranbagul.in</a>
+            </div>
+            <div class="headerNavLinkDiv">
+                <a class="navLink" onclick="scrollToDiv('home')">Home</a>
+                <a class="navLink" onclick="scrollToDiv('summary')">SUMMARY</a>
+                <a class="navLink" onclick="scrollToDiv('skills')">SKILLSET</a>
+                <a class="navLink" onclick="scrollToDiv('experience')">EXPERIENCE</a>
+                <a class="navLink" onclick="scrollToDiv('edu')">EDUCATION</a>
+                <a class="navLink" onclick="scrollToDiv('hobbies')">INTERESTS</a>
+            </div>
+        </div>
     </div>
+    <section id="home" data-speed="3" data-type="background">
+        <div style="padding-top: 138px;"></div>
+        <article class="container" style="padding-top: 100px;">
+        </article>
+    </section>
+    <section id="summary" data-speed="3" data-type="background">
+        <article class="container" style="padding-top: 100px;">
+            <h2 style="color: white;">long story short</h2>
+            <div class="list-group">
+                <div class="list-group-item summaryItem box">
+                    Successful IT professional with proven ability to understand business problems and apply technology to formulate workable solution.</div>
+                <div class="list-group-item summaryItem box">
+                    <div>Process expertise in object oriented analysis/design, skilled at progressing from problem statement to well-documented designs.&nbsp;
+                    </div>
+                </div>
+                <div class="list-group-item summaryItem box">
+                    Team player with good communication and interpersonal skills.
+                </div>
+                <div class="list-group-item summaryItem box">
+                    5+ years of strong experience in designing and developing Java, NodeJs/JavaScript, J2EE applications.</div>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+                <div class="list-group-item summaryItem box">
+                    Expertise in full project life cycle development for implementation and integration.
+                </div>
+            </div>
+        </article>
+    </section>
+    <section id="skills" data-speed="10" data-type="background">
+        <div class="container">
+            <h2>skillset</h2>
+        </div>
+        <div id="viz"></div>
+    </section>
+    <section id="experience" data-speed="13" data-type="background">
+        <div class="container">
+            <h2 style="color: white;">profesional experience</h2>
+            <div class="col-md-10 col-md-offset-1">
+                <iframe src='http://cdn.knightlab.com/libs/timeline/latest/embed/index.html?source=0AgGmj62yRVCvdEFtcUFrSUpUbEI1OU5zUUtKVE9uUXc&font=Bevan-PotanoSans&maptype=TERRAIN&start_at_slide=2&lang=en&height=650' width='100%' height='650' frameborder='0'></iframe>
+            </div>
+        </div>
+    </section>
+    <section id="edu" data-speed="14" data-type="background">
+        <div class="container">
+            <div class="col-md-8">
+                <h1 style="color: white;">education</h1>
+                <div id="education" style="width: 900px; height: 200px;"></div>
+                <h2 style="color: white;">publication&nbsp;</h2>
+                <div id="publication" style="width: 900px; height: 50px;" class="list-group">
+                    <div class="list-group-item summaryItem box">
+                        Article published in Nov 2006 issue of “Electronics For You” Magazine under tittle “Simplification Of K-Map Using C” and software was included in CD.
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <h2 style="color: white;">seminar</h2>
+                <div id="seminar" style="width: 900px; height: 50px;" class="list-group">
+                    <div class="list-group-item summaryItem box">
+                        “Data Acquisition: Detection Techniques”
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <h2 style="color: white;">vocational trainings</h2>
+                <div id="trainings" style="width: 900px; height: 100px;" class="list-group">
+                    <div class="list-group">
+                        <div class="list-group-item summaryItem box">
+                            Crompton Greaves Ltd (15 days); S1 Division, Nashik.</div>
+                        <div class="list-group-item summaryItem box">
+                            Schneider Electric India Pvt Ltd. (10 Days)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="hobbies" data-speed="14" data-type="background">
+        <div class="container">
+            <h1 style="color: white;">interests</h1>
+            <div class="col-md-12" style="height:500px; display: inline-flex;">
+                <div id="painting" class="interest painting"></div>
+                <div id="poetry" class="interest poetry"></div>
+                <div id="travelling" class="interest travelling"></div>
+                <div id="reading" class="interest reading"></div>
+            </div>
+        </div>
+        </div>
+    </section>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+</body>
+<script src="js/utils.js"></script>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
-
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
-
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
-    
-
-  </body>
 </html>
