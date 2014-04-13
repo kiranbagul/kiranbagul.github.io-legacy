@@ -13,9 +13,6 @@
                $bgobj.css({
                    backgroundPosition: coords
                });
-
-
-
            }); // window scroll Ends
        });
    });
@@ -26,14 +23,71 @@
    document.createElement("section");
 
    /*-------*/
-   function scrollToDiv(divId) {
-       var target = "#" + divId;
+   $('section').height($(window).height());
+
+   var divList = ['home', 'summary', 'skills', 'experience', 'edu', 'hobbies'];
+   var elem = 0;
+
+   function traverseToDiv() {
+       $("#rotate").css({
+           display: 'none'
+       });
+       if (elem === 0) {
+           $('.previous').css({
+               display: 'none'
+           });
+           $('.next').css({
+               display: 'block'
+           });
+       } else if (divList.length - 1 > elem > 0) {
+           $('.previous').css({
+               display: 'block'
+           });
+           $('.next').css({
+               display: 'block'
+           });
+       } else if (elem == divList.length - 1) {
+           $('.next').css({
+               display: 'none'
+           });
+           $('.previous').css({
+               display: 'block'
+           });
+       }
        $('html, body').animate({
-           scrollTop: $(target).offset().top - 70
+           scrollTop: $("section[id=" + divList[elem] + "]").offset().top - 70
        }, 1000);
-   };
+   }
+
+
+   traverseToDiv();
+
+   function scrollToDiv(divId) {
+       elem = divList.indexOf(divId);
+       traverseToDiv();
+   }
+
+   $('.next').click(function () {
+       ++elem;
+       traverseToDiv();
+   });
+
+   $('.previous').click(function () {
+       --elem;
+       traverseToDiv();
+   });
 
    /* ---------------- */
+
+   var terms = ["I code", "I learn", "I design", "I innovate"]; //array of terms to rotate
+
+   function rotateTerm() {
+       var ct = $("#rotate").data("term") || 0;
+       $("#rotate").data("term", ct == terms.length - 1 ? 0 : ct + 1).text(terms[ct]).slideDown(500).delay(2000).slideUp(500, rotateTerm);
+   }
+   $(rotateTerm);
+
+   /*----------*/
 
    google.setOnLoadCallback(drawChart);
 
@@ -74,14 +128,23 @@
    }
    /* ---------------- */
 
-   var width = 1300,
-       height = 900;
+   var width = $(window).width(),
+       height = $(window).height();
+   var radius = 30;
+   var linkDistance = 30;
+   var friction = 0.3;
+   if (width > 767) {
+       radius = 70;
+       linkDistance = 100;
+       friction = 0.8;
+   }
+
    var color = d3.scale.category20();
 
    var force = d3.layout.force()
        .charge(-2000)
-       .friction(0.8)
-       .linkDistance(100)
+       .friction(friction)
+       .linkDistance(linkDistance)
        .size([width, height]);
 
    var svg = d3.select("#viz").append("svg")
@@ -110,7 +173,7 @@
 
        var node = gnodes.append("circle")
            .attr("class", "node")
-           .attr("r", 70)
+           .attr("r", radius)
            .style("fill", function (d) {
                return color(d.group);
            })
@@ -120,8 +183,6 @@
            .text(function (d) {
                return d.name;
            });
-
-       console.log(labels);
 
        force.on("tick", function () {
            link.attr("x1", function (d) {
@@ -208,7 +269,7 @@
                "group": 2
         },
            {
-               "name": "Test Driven Development",
+               "name": "TDD",
                "group": 4
         },
            {
@@ -224,12 +285,8 @@
                "group": 4
         },
            {
-               "name": "SQL",
-               "group": 5
-        },
-           {
-               "name": "NoSql",
-               "group": 5
+               "name": "sql/noSql",
+               "group": 4
         }
 
 
@@ -238,17 +295,17 @@
            {
                "source": 0,
                "target": 0,
-               "value": 0
+               "value": 1
         },
            {
                "source": 1,
                "target": 0,
-               "value": 0
+               "value": 1
         },
            {
                "source": 2,
                "target": 0,
-               "value": 0
+               "value": 1
         },
            {
                "source": 3,
@@ -307,40 +364,34 @@
         },
            {
                "source": 14,
-               "target": 2,
-               "value": 1
+               "target": 1,
+               "value": 0
         },
            {
                "source": 15,
-               "target": 2,
+               "target": 4,
                "value": 0
         },
            {
                "source": 16,
-               "target": 3,
+               "target": 4,
                "value": 0
         },
            {
                "source": 17,
-               "target": 3,
+               "target": 4,
                "value": 0
         },
            {
                "source": 18,
-               "target": 3,
+               "target": 4,
                "value": 0
         },
            {
                "source": 19,
                "target": 4,
                "value": 0
-        },
-           {
-               "source": 20,
-               "target": 4,
-               "value": 0
-        }
-
+           }
   ]
    };
    drawGraph(graph);

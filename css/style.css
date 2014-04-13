@@ -1,16 +1,19 @@
+body{
+    overflow: hidden;
+}
+
 .headerText {
     margin-top: 3px;
     font-family: Montserrat, sans-serif;
     color: #5c5c5c;
     font-size: 19px;
     font-weight: 700;
-    letter-spacing: 9px;
+    letter-spacing: 3px;
     text-transform: uppercase;
 }
 .navLink {
     display: inline-block;
     margin-right: 8px;
-    margin-left: 8px;
     -webkit-transition: all 200ms ease;
     -o-transition: all 200ms ease;
     transition: all 200ms ease;
@@ -19,14 +22,13 @@
     font-size: 14px;
     text-transform: uppercase;
     cursor: pointer;
+    text-shadow: 1px 1px white;
 }
 .navLink:hover {
     color: #ed7a56;
 }
 .headerLinkDiv {
     padding-top: 6px;
-    padding-top: 6px;
-    width: 33%;
     float: left;
 }
 .header-cont {
@@ -39,7 +41,7 @@
     background: #F0F0F0;
     border: 1px solid #CCC;
     margin: 0px auto;
-    z-index: 5;
+    z-index: 2000;
 }
 .nav-link {
     display: inline-block;
@@ -58,7 +60,7 @@
     color: #ed7a56;
 }
 #home {
-    background: url(../images/education.jpg) 50% 0 no-repeat fixed;
+    background: black;
     height: 1000px;
     margin: 0 auto;
     width: 100%;
@@ -66,6 +68,11 @@
     position: relative;
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
 }
+
+.summaryContainer{
+    padding-top: 100px;
+}
+
 #summary {
     background: url(../images/blue2.jpg) 50% 0 no-repeat fixed;
     height: 1000px;
@@ -129,7 +136,6 @@
 .box {
     border-right: 1px solid #000;
     border-bottom: 1px solid #000;
-    float: left;
     text-align: center;
     padding: 15px;
     cursor: pointer;
@@ -148,11 +154,10 @@
     border-bottom: 1px solid #FFF;
     -moz-box-shadow: 0 0px 10px #000;
     -o-box-shadow: 0 0px 10px #000;
-    -webkit-transform: scale(1.2);
-    -moz-transform: scale(1.2);
-    -o-transform: scale(1.2);
-    transform: scale(1.2);
-    margin: auto;
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
 }
 .box img {
     float: left;
@@ -184,49 +189,212 @@
     float: right;
 }
 .interest {
+    max-width: 255px;
+    display: inline-block;
     -webkit-transition: all 0.4s;
     -webkit-box-shadow: 0 18px 25px -6px black;
     -moz-box-shadow: 0 18px 25px -6px black;
     box-shadow: 0 18px 25px -6px black;
+    -webkit-transform: rotate(9deg);
+    -moz-transform: rotate(9deg);
+    -o-transform: rotate(9deg);
+    -ms-transform: rotate(9deg);
 }
 .interest:hover {
     z-index: 10;
     -webkit-transform: rotate(0deg) scale(1.1);
     -webkit-transition: all 0.4s;
 }
+
 .painting {
-    background-image: url(../images/painting.jpeg);
-    width: 265px;
-    height: 190px;
     -webkit-transform: rotate(-9deg);
     -moz-transform: rotate(-9deg);
     -o-transform: rotate(-9deg);
     -ms-transform: rotate(-9deg);
 }
-.poetry {
-    background-image: url(../images/poetry.jpeg);
-    width: 225px;
-    height: 190px;
-    -webkit-transform: rotate(9deg);
-    -moz-transform: rotate(9deg);
-    -o-transform: rotate(9deg);
-    -ms-transform: rotate(9deg);
-}
-.travelling {
-    background-image: url('../images/bagpack.jpeg');
-    width: 255px;
-    height: 190px;
-    -webkit-transform: rotate(9deg);
-    -moz-transform: rotate(9deg);
-    -o-transform: rotate(9deg);
-    -ms-transform: rotate(9deg);
-}
+
 .reading {
-    background-image: url('../images/reading.jpeg');
-    width: 255px;
-    height: 190px;
     -webkit-transform: rotate(-9deg);
     -moz-transform: rotate(-9deg);
     -o-transform: rotate(-9deg);
     -ms-transform: rotate(-9deg);
+}
+#rotate {
+    font-family: "jaf-bernino-sans", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+    color: white;
+    font-size: 7em;
+    margin-left: 180px;
+    margin-top: 50px;
+}
+#home-desc-row {
+    height: 100%;
+}
+#home-desc-col {
+    top: 40%;
+    margin-left: 2%;
+}
+#fixed-text {
+    font-size: 25em;
+    color: cornsilk;
+    position: fixed;
+    left: 400px;
+    top: 0px;
+    font-family: monospace;
+}
+.subtext {
+    font-size: 2em;
+    color: cornsilk;
+    font-family: fantasy, monospace;
+    margin: 0 auto;
+}
+.move {
+    color: #FFFFFF;
+}
+.previous {
+    position: fixed;
+    top: 10%;
+    z-index: 1000;
+    display: none;
+}
+
+.next {
+    position: fixed;
+    top: 90%;
+    z-index: 1000;
+}
+
+.arrow-wrap {
+  left:45%;
+  margin-left:-5em;
+  background:#111;
+  width:10em;
+  height:10em;
+  padding:4em 2em;
+  border-radius:50%;
+  font-size:0.5em;
+  opacity: 0.5;    
+}
+
+.nextArrow, .prevArrow {
+  float:left;
+  position:relative;
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 3em 3em 0 3em;
+  border-color: #ffffff transparent transparent transparent;
+}
+
+.nextArrow:after, .prevArrow:after {
+  content:'';
+  position:absolute;
+  top:-3.2em;
+  left:-3em;
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-color: #111 transparent transparent transparent;
+}
+
+.nextArrow,
+.nextArrow:after{
+  border-width: 3em 3em 0 3em;
+  -webkit-transform:rotate(360deg);
+  -moz-transform:rotate(360deg);
+}
+
+.prevArrow{
+  border-width: 3em 3em 0 3em;
+  -webkit-transform:rotate(180deg);
+  -moz-transform:rotate(180deg);
+}
+
+.prevArrow:after{
+  border-width: 3em 3em 0 3em;
+  -webkit-transform:rotate(360deg);
+  -moz-transform:rotate(360deg);
+}
+
+h2{
+  text-shadow: 1px 1px #000000;
+}
+
+.summaryContainer{
+   padding: 0px;
+}
+
+#viz{
+    margin-top: -80px;
+}
+
+.alert-title{
+    background: rgba(59, 53, 61, 0.21);
+    color: white;
+    text-shadow: 0px 1px black;
+    font-size: 30px;
+    font-family: fantasy, monospace;
+}
+
+#education{
+    overflow-x: scroll;
+    max-width: 400px;
+}
+
+
+@media (max-width: 767px) {
+    h2{
+        font-family: papyrus monospace;
+        font-size: 20px;
+    }
+    
+    h1{
+        font-size: 20px;
+    }
+    
+    .box{
+        padding: 8px;
+    }
+    
+    .box:hover {
+        z-index: 5;
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -o-transform: scale(1);
+        transform: scale(1);
+    }
+    
+    .summaryItem{
+        font-size: 12px;
+        width: 85%;
+    }
+    
+    #rotate {
+        font-family: fantasy, monospace;
+        color: white;
+        font-size: 4em;
+        margin: 0 auto;
+    }
+
+    .headerLinkDiv {
+        width: 100%;
+    }
+    .navLink {
+        margin: 0 auto;
+    }
+    .headerText {
+        letter-spacing: 5px;
+    }
+    .headerNavLinkDiv{
+        display: none;
+    }
+    .interestImage {
+        max-width: 125px;
+    }
+    .interest {
+        max-width: 125px;
+    }
+    .alert-title{
+        font-size: 30px;
+    }
+    
 }
