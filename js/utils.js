@@ -23,7 +23,6 @@
    document.createElement("section");
 
    /*-------*/
-   $('section').height($(window).height());
 
    var divList = ['home', 'summary', 'skills', 'experience', 'edu', 'hobbies'];
    var elem = 0;
@@ -67,7 +66,7 @@
        traverseToDiv();
    }
 
-   $('.next').click(function () {
+/*   $('.next').click(function () {
        ++elem;
        traverseToDiv();
    });
@@ -76,7 +75,7 @@
        --elem;
        traverseToDiv();
    });
-
+*/
    /* ---------------- */
 
    var terms = ["I code", "I learn", "I design", "I innovate"]; //array of terms to rotate
@@ -88,8 +87,6 @@
    $(rotateTerm);
 
    /*----------*/
-
-   google.setOnLoadCallback(drawChart);
 
    function drawChart() {
        var container = document.getElementById('education');
@@ -125,33 +122,35 @@
        };
 
        chart.draw(dataTable, options);
-   }
+   };
+
    /* ---------------- */
 
-   var width = $(window).width(),
-       height = $(window).height();
-   var radius = 30;
-   var linkDistance = 30;
-   var friction = 0.3;
-   if (width > 767) {
-       radius = 70;
-       linkDistance = 100;
-       friction = 0.8;
-   }
-
-   var color = d3.scale.category20();
-
-   var force = d3.layout.force()
-       .charge(-2000)
-       .friction(friction)
-       .linkDistance(linkDistance)
-       .size([width, height]);
-
-   var svg = d3.select("#viz").append("svg")
-       .attr("width", width)
-       .attr("height", height);
-
    var drawGraph = function (graph) {
+   
+       var width = $(window).width(),
+       height = $(window).height();
+	   var radius = 30;
+	   var linkDistance = 30;
+	   var friction = 0.3;
+	   if (width > 767) {
+	       radius = 70;
+	       linkDistance = 100;
+	       friction = 0.8;
+	   }
+	   
+	   var color = d3.scale.category20();
+
+	   var force = d3.layout.force()
+    	   .charge(-2000)
+	       .friction(friction)
+	       .linkDistance(linkDistance)
+	       .size([width, height]);
+
+	   var svg = d3.select("#viz").append("svg")
+	       .attr("width", width)
+	       .attr("height", height);   
+   
        force
            .nodes(graph.nodes)
            .links(graph.links)
@@ -180,6 +179,7 @@
            .call(force.drag);
 
        var labels = gnodes.append("text")
+       		.style('color','white')
            .text(function (d) {
                return d.name;
            });
@@ -201,8 +201,6 @@
            gnodes.attr("transform", function (d) {
                return 'translate(' + [d.x, d.y] + ')';
            });
-
-
 
        });
    };
@@ -394,8 +392,26 @@
            }
   ]
    };
-   drawGraph(graph);
-
-
-
-   /* ------------ */
+   
+	var googleLoaded = false;
+	var init = function(){
+		var height = $(window).height() > 400 ? $(window).height() : 400;
+   		$('section').height(height);
+   		$('#viz').html("");
+    	$('#education').html("");
+    	if(!googleLoaded){
+    		google.setOnLoadCallback(function(){
+    			googleLoaded = true;
+		    	drawChart();
+    		});
+    	}else{
+    	    drawChart();
+    	}
+	   	$('section#edu').height(750);
+	   	drawChart();
+	   	drawGraph(graph);
+	};
+   init();
+   $(window).resize(function(){   
+		init();
+   });

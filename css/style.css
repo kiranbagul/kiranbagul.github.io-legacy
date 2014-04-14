@@ -1,6 +1,3 @@
-body{
-    overflow: hidden;
-}
 
 .headerText {
     margin-top: 3px;
@@ -228,6 +225,7 @@ body{
 }
 #home-desc-row {
     height: 100%;
+    margin : 0 auto;
 }
 #home-desc-col {
     top: 40%;
@@ -335,9 +333,13 @@ h2{
     font-family: fantasy, monospace;
 }
 
-#education{
-    overflow-x: scroll;
-    max-width: 400px;
+.skillText{
+	color:white;
+}
+
+.subHeading{
+	font-family : georgia;
+	color : white;
 }
 
 
