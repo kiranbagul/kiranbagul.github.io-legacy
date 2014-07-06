@@ -1,21 +1,4 @@
-   $(document).ready(function () {
-       // Cache the Window object
-       $window = $(window);
-       $('section[data-type="background"]').each(function () {
-           var $bgobj = $(this); // assigning the object
-           $(window).scroll(function () {
-               // Scroll the background at var speed
-               // the yPos is a negative value because we're scrolling it UP!
-               var yPos = -($window.scrollTop() / $bgobj.data('speed'));
-               // Put together our final background position
-               var coords = '50% ' + (yPos) + 'px';
-               // Move the background
-               $bgobj.css({
-                   backgroundPosition: coords
-               });
-           }); // window scroll Ends
-       });
-   });
+   $(document).ready(function () {});
    /* 
     * Create HTML5 elements for IE's sake
     */
@@ -65,28 +48,6 @@
        elem = divList.indexOf(divId);
        traverseToDiv();
    }
-
-/*   $('.next').click(function () {
-       ++elem;
-       traverseToDiv();
-   });
-
-   $('.previous').click(function () {
-       --elem;
-       traverseToDiv();
-   });
-*/
-   /* ---------------- */
-
-   var terms = ["I code", "I learn", "I design", "I innovate"]; //array of terms to rotate
-
-   function rotateTerm() {
-       var ct = $("#rotate").data("term") || 0;
-       $("#rotate").data("term", ct == terms.length - 1 ? 0 : ct + 1).text(terms[ct]).slideDown(500).delay(2000).slideUp(500, rotateTerm);
-   }
-   $(rotateTerm);
-
-   /*----------*/
 
    function drawChart() {
        var container = document.getElementById('education');
@@ -392,26 +353,14 @@
            }
   ]
    };
-   
-	var googleLoaded = false;
+    google.setOnLoadCallback(drawChart);
 	var init = function(){
-		var height = $(window).height() > 400 ? $(window).height() : 400;
-   		$('section').height(height);
    		$('#viz').html("");
     	$('#education').html("");
-    	if(!googleLoaded){
-    		google.setOnLoadCallback(function(){
-    			googleLoaded = true;
-		    	drawChart();
-    		});
-    	}else{
-    	    drawChart();
-    	}
-	   	$('section#edu').height(750);
-	   	drawChart();
 	   	drawGraph(graph);
 	};
    init();
    $(window).resize(function(){   
 		init();
+		drawChart();
    });
