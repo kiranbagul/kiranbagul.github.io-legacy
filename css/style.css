@@ -221,7 +221,7 @@ body {
 .node:hover {
     opacity: 1;
 }
-.link {
+.link {e
     stroke: #999;
     stroke-opacity: 0.3;
 }
@@ -402,8 +402,9 @@ h2 {
 }
 
 #education {
-   overflow-x: scroll;
-   min-width: 500px; 
+   overflow-x: auto;
+   min-width: 500px;
+   min-height: 132px;
 }
 
 .edu-timeline {
@@ -721,8 +722,6 @@ h2 {
     margin-bottom: 5%;
 }
 #g_button {
-    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05), inset 0 0 0 1px rgba(255, 255, 255, 0.05), inset 0 -60px 60px -40px rgba(145, 134, 134, 0.3);
-    border: 1px solid rgba(0, 0, 0, 0.5);
     width: 42px;
     padding: 4px;
     display: inline-block;
